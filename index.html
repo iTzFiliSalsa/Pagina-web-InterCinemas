@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/all.js"></script>
+    <title>interCinemas</title>
+</head>
+<body>
+    <div class="header">
+            <div id="cabecera">
+                    <div id="cabeceralogos">
+                        <img src="img/logointer.png" alt="Logo">
+                    </div>
+                </div>
+                <nav>
+                <ul class="mostrar">
+                        <li>
+                           <img src="img/menuicon.png" alt="" onClick="mostrar()">
+                        </li>
+                    </ul>
+                    <ul id="menu">
+                        <li><a href="" onClick="location.reload()" class="bot">Inicio</a></li>
+                        <li><a href="#pelis" class="bot">Cartelera</a></li>
+                        <li><a href="" class="bot">Promociones</a></li>
+                        <li><a href="" class="bot">Nuestro cine</a></li>
+                        <li><a href="#contenidofooter" class="bot">Contacto</a></li>  
+                    </ul> 
+                </nav>
+    </div>
+    <section id="principal">
+        <div id ="carousel">
+            <img src="img/flecha.png" alt="Carousel" class="flechas" id="flechauno" onClick="retroceder()">
+            <img src="img/flechad.png" alt="Carousel" class="flechas" id="flechados" onClick="avanzar()">
+            <img src="" alt="Carousel" id="img" class="imagen">
+        </div>
+        <section id="seccion">
+            <!--Cartelera y promociones-->
+            <div class="cartelera" id="pelis">
+                <h3>Cartelera</h3>
+                <hr>
+                <div class="peliculas">
+                        <div class="pelicula1" id="peli1">
+                                <img src="img/it.jpg" alt="Pelicula1" class="seleccionado" >
+                                <h5 id="titulo1">IT 2</h5>
+                                <p>Duración: 120 minutos.</p>
+                        </div>
+                        <div class="pelicula1" id="peli2">
+                                <img src="img/angry.jpg" alt="Pelicula2" class="seleccionado" id="peli2">
+                                <h5 id="titulo2">Angry Birds 2</h5>
+                                <p>Duración: 96 minutos.</p>
+                            </div>
+                            <div class="pelicula1" id="peli3">
+                                    <img src="img/angel.jpg" alt="Pelicula3" class="seleccionado" id="peli3">
+                                    <h5 id="titulo3">Angel Bajo Fuego</h5>
+                                <p>Duración: 120 minutos.</p>
+                                </div>
+                </div>
+                <div class="peliculas">
+                        <div class="pelicula1" id="peli4">
+                                <!--<img src="img/banner.png" alt="Pelicula1" class="banner" >-->
+                                <img src="img/historiasdemiedo.jpg" alt="Pelicula1" class="seleccionado" id="peli4">
+                                <h5 id="titulo4">Historias de meido para contar en la oscuridad</h5>
+                                <p>Duración: 120 minutos.</p>
+                        </div>
+                        <div class="pelicula1" id="peli5">
+                                <img src="img/habia.jpg" alt="Pelicula2" class="seleccionado" id="peli5">
+                                <h5 id="titulo5">Habia una vez en... Hollywood</h5>
+                                <p>Duración: 96 minutos.</p>
+                            </div>
+                            <div class="pelicula1" id="peli6">
+                                    <img src="img/dora.jpg" alt="Pelicula3" clasS="seleccionado" id="peli6">
+                                    <h5 id="titulo6">Dora: La Exploradora</h5>
+                                <p>Duración: 120 minutos.</p>
+                                </div>
+                </div>
+            </div> 
+            <div class="promociones">
+                <h3>Promociones</h3>
+                <hr>
+                <div class="respromociones">
+                    <span id="promocionuno"><img src="img/promococa.jpg" alt="Promocion"></span>
+                    <span id="promociondos"><img src="img/promociondos.jpg" alt="Promocion"></span>
+                </div>
+            </div>
+        </section>
+        <section id="secciondos">
+            <h3>Novedades</h3>
+                <hr>
+                <div class="novedades">
+
+                </div>
+        </section>
+    </section>
+    <footer>
+    <div id="contenidofooter">
+        <div id="contacto">
+            <h4>CONTACTO</h4>
+            <hr>
+                <ul>
+                        <li><i class="fas fa-map-pin"></i>   Zona Centro, Ags. 20800</li>
+                        <li><i class="fas fa-phone"></i>    +52 495 956 0399</li>
+                    </ul>
+        </div>
+        <div id="redes">
+                <h4>REDES SOCIALES</h4>
+                <hr>
+                    <ul>
+                            <li><i class="fab fa-facebook"></i></li>
+                            <li><i class="fab fa-twitter"></i></li>
+                        </ul>
+            </div>
+    </div>
+    <div id="derechos">
+        <p>derechos reservados. sitio web construido por: FMODZ</p>
+    </div>
+    </footer>
+    <script type="text/javascript">
+        var i=0;
+        window.onload=function(){
+            avanzar();
+        }
+        function mostrar(){
+            var element= document.getElementsByClassName("bot");
+            if(element.length<1){
+                var element= document.getElementsByClassName("menu");
+                 element[0].className="bot";
+                element[0].className="bot";
+                element[0].className="bot";
+                element[0].className="bot";
+                element[0].className="bot";
+            }else{
+                element[0].className="menu";
+                element[0].className="menu";
+                element[0].className="menu";
+                element[0].className="menu";
+                element[0].className="menu";
+            }
+        }
+        function avanzar(){
+            var imagen=document.getElementById("img");
+            if(i==0){
+                imagen.src="img/titulo.jpg";
+                i=1;
+            }else if(i==1){
+                imagen.src="img/angryposter.jpg";
+                i=2
+            }else if(i==2){
+                imagen.src="img/itposter.jpg";
+                i=3;
+            }
+            else if(i==3){
+                imagen.src="img/angelposter.jpg";
+                i=0;
+            }      
+            console.log(i);
+        }
+        function retroceder(){
+            var imagen=document.getElementById("img");
+            if(i==0){
+                imagen.src="img/titulo.jpg";
+                i=2;
+            }else if(i==1){
+                imagen.src="img/angryposter.jpg";
+                i=0;
+            }else if(i==2){
+                imagen.src="img/itposter.jpg";
+                i=3;
+            }   
+            else if(i==3){
+                imagen.src="img/angelposter.jpg";
+                i=1;
+            }         
+            console.log(i);
+        }
+        
+    </script>
+</body>
+</html>
